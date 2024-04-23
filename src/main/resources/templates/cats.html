@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Cats</title>
+</head>
+<body>
+<h1>>Cats</h1>
+<h2>View cats</h2>
+<table>
+        <tr>
+            <th>CAT NAME</th>
+            <th>CAT AGE</th>
+            <th>CAT'S TEAMS</th>
+        </tr>
+        <tr th:each="p: ${cats}" >
+            <td th:text="${p.name}"></td>
+            <td th:text="${p.age}"></td>
+            <td th:text="${p.teams}"></td>
+        </tr>
+    </table>
+
+<h2>Add a product</h2>
+<form action="/cats" method="post">
+        Name: <input type="text" name="name"><br />
+        Age: <input type="number" step="any" name="age"><br />
+        Teams: <input type="text" name="teams"><br />
+        <button type="submit">Add product</button>
+    </form>
+</body>
+</html>
